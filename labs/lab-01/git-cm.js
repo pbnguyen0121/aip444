@@ -16,20 +16,20 @@ function printHeader() {
   const now = new Date();
 
   const runDate =
-    now.getFullYear() +
+    now.getUTCFullYear() +
     "-" +
-    String(now.getMonth() + 1).padStart(2, "0") +
+    String(now.getUTCMonth() + 1).padStart(2, "0") +
     "-" +
-    String(now.getDate()).padStart(2, "0") +
+    String(now.getUTCDate()).padStart(2, "0") +
     " " +
-    String(now.getHours()).padStart(2, "0") +
+    String(now.getUTCHours()).padStart(2, "0") +
     ":" +
-    String(now.getMinutes()).padStart(2, "0") +
+    String(now.getUTCMinutes()).padStart(2, "0") +
     ":" +
-    String(now.getSeconds()).padStart(2, "0");
+    String(now.getUTCSeconds()).padStart(2, "0");
 
   console.log(`git-cm: Developed by ${fullName} - ${studentId}`);
-  console.log(`Run Date: ${runDate}`);
+  console.log(`Run Date: ${runDate} UTC`);
   console.log("--------------------------------------------------------------");
 }
 
@@ -63,8 +63,8 @@ async function main() {
   console.log(`✅ Diff found: ${diff.length} characters`);
 
   const systemPrompt = isCreative
-  ? "You are a pirate programmer from the 17th century. Write ONLY one funny git commit message using pirate slang and Gitmoji. Example: 🏴‍☠️ feat: hoist the mighty git diff spyglass, matey! No explanation. No markdown."
-  : "You write git commit messages. Output ONLY one Conventional Commit message in this exact format: type: description. Example: feat: add git diff support. Include a space after the colon. No markdown. No explanation.";
+    ? "You are a pirate programmer from the 17th century. Write ONLY one funny git commit message using pirate slang and Gitmoji. Example: 🏴‍☠️ feat: hoist the mighty git diff spyglass, matey! No explanation. No markdown."
+    : "You write git commit messages. Output ONLY one Conventional Commit message in this exact format: type: description. Example: feat: add git diff support. Include a space after the colon. No markdown. No explanation.";
 
   const temperature = isCreative ? 1.8 : 0.1;
 
@@ -73,33 +73,50 @@ async function main() {
     apiKey: apiKey,
   });
 
-  const completion = await openai.chat.completions.create({
-    model: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-    messages: [
-      {
-        role: "system",
-        content:
-          "You are an LLM running in a CLI tool. You write semantic commit messages based on a git diff. Output ONLY one commit message using Conventional Commits format, for example: feat: add git diff support. Do not use Markdown. Do not explain anything.",
-      },
-      {
-        role: "user",
-        content: diff,
-      },
-    ],  
-    temperature: 0.1,
-    max_tokens: 200,
-  });
+  try {
+    const completion = await openai.chat.completions.create({
+      model: "poolside/laguna-m.1:free",
+      messages: [
+        {
+          role: "system",
+          content: systemPrompt,
+        },
+        {
+          role: "user",
+          content: diff,
+        },
+      ],
+      temperature: temperature,
+      max_tokens: 300,
+    });
 
-  const commitMessage = completion.choices[0]?.message?.content;
+    // Some reasoning models return content in reasoning instead of content
+    const commitMessage =
+      completion.choices[0]?.message?.content ||
+      completion.choices[0]?.message?.reasoning;
 
-  if (!commitMessage) {
-    console.log("❌ Error: Model did not return a commit message.");
-    console.log(JSON.stringify(completion, null, 2));
+    if (!commitMessage) {
+      console.log("❌ Error: Model did not return a commit message.");
+      console.log(JSON.stringify(completion, null, 2));
+      process.exit(1);
+    }
+
+    // If reasoning text is returned, try extracting the last meaningful line
+    const cleanedMessage = commitMessage
+      .split("\n")
+      .filter((line) => line.trim().length > 0)
+      .pop();
+
+    console.log(cleanedMessage.trim());
+  } catch (error) {
+    if (error.status === 429) {
+      console.log("❌ Error: Model is rate-limited. Try again later.");
+    } else {
+      console.log("❌ OpenRouter Error:", error.message);
+    }
+
     process.exit(1);
   }
-
-  console.log(commitMessage.trim());
 }
-
 
 main();
