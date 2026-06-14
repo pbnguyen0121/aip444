@@ -7,7 +7,7 @@ async function main() {
     {
       owner: "microsoft",
       repo: "vscode",
-      path: "abcxyz.ts",
+      path: "package.json",
       ref: "main",
     },
   ]);
