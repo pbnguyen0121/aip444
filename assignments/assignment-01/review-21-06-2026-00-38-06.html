@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Review Report — bad_code.js</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #e5e7eb;
+      --blue: #2563eb;
+      --blue-soft: #eff6ff;
+      --critical: #b42318;
+      --critical-soft: #fee4e2;
+      --high: #b54708;
+      --high-soft: #fff4ed;
+      --medium: #b76e00;
+      --medium-soft: #fffaeb;
+      --low: #475467;
+      --low-soft: #f2f4f7;
+      --success: #067647;
+      --success-soft: #ecfdf3;
+      --shadow: 0 18px 45px rgba(16, 24, 40, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 34rem),
+        radial-gradient(circle at top right, rgba(6, 118, 71, 0.09), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 58%, #1d4ed8 100%);
+      color: #ffffff;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -90px;
+      top: -100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      letter-spacing: -0.04em;
+      max-width: 760px;
+    }
+
+    .subtitle {
+      margin: 14px 0 0;
+      max-width: 760px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.92rem;
+    }
+
+    .meta-label {
+      color: rgba(255, 255, 255, 0.68);
+      font-weight: 700;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.95em;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 18px 0;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(16, 24, 40, 0.05);
+    }
+
+    .stat-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .stat-critical {
+      border-color: rgba(180, 35, 24, 0.22);
+      background: var(--critical-soft);
+    }
+
+    .stat-critical strong {
+      color: var(--critical);
+    }
+
+    .stat-high {
+      border-color: rgba(181, 71, 8, 0.22);
+      background: var(--high-soft);
+    }
+
+    .stat-high strong {
+      color: var(--high);
+    }
+
+    .stat-medium {
+      border-color: rgba(183, 110, 0, 0.22);
+      background: var(--medium-soft);
+    }
+
+    .stat-medium strong {
+      color: var(--medium);
+    }
+
+    .stat-low {
+      border-color: rgba(71, 84, 103, 0.18);
+      background: var(--low-soft);
+    }
+
+    .stat-low strong {
+      color: var(--low);
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-top: 18px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title h2 {
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .executive-summary {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .severity-block + .severity-block {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .severity-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .severity-heading span:last-child {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 74px;
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .badge-critical {
+      color: var(--critical);
+      background: var(--critical-soft);
+    }
+
+    .badge-high {
+      color: var(--high);
+      background: var(--high-soft);
+    }
+
+    .badge-medium {
+      color: var(--medium);
+      background: var(--medium-soft);
+    }
+
+    .badge-low {
+      color: var(--low);
+      background: var(--low-soft);
+    }
+
+    .badge-success {
+      color: var(--success);
+      background: var(--success-soft);
+    }
+
+    .finding-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      background: #ffffff;
+    }
+
+    .finding-card + .finding-card {
+      margin-top: 12px;
+    }
+
+    .finding-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .finding-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .finding-meta {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .meta-box {
+      border: 1px solid var(--border);
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 10px;
+      min-width: 0;
+    }
+
+    .meta-box-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+
+    .meta-box-value {
+      display: block;
+      color: var(--text);
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .finding-description {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .recommendation {
+      margin-top: 14px;
+      padding: 13px 14px;
+      border-radius: 14px;
+      background: var(--blue-soft);
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+      font-weight: 650;
+    }
+
+    .next-steps {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-top: 18px;
+    }
+
+    .next-steps h2 {
+      margin-bottom: 14px;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .next-steps ol {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .next-steps li {
+      margin: 10px 0;
+      padding-left: 4px;
+    }
+
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 24px 0 10px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 860px) {
+      .page {
+        width: min(100% - 20px, 1120px);
+        margin: 16px auto;
+      }
+
+      .hero,
+      .section,
+      .next-steps {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .summary-grid,
+      .finding-meta {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .finding-header {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .summary-grid,
+      .finding-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .severity-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="kicker">Lead Developer Review</div>
+      <h1>Code Review Report</h1>
+      <p class="subtitle">Prioritized review findings for <code>bad_code.js</code>, with security issues addressed first and maintainability improvements grouped by impact.</p>
+
+      <div class="meta" aria-label="Review metadata">
+        <div class="meta-item">
+          <span class="meta-label">Reviewed mode</span>
+          <span>file</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Reviewed path</span>
+          <span><code>bad_code.js</code></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="summary-grid" aria-label="Summary statistics">
+      <article class="stat">
+        <span class="stat-label">Prioritized findings</span>
+        <strong>5</strong>
+      </article>
+      <article class="stat stat-critical">
+        <span class="stat-label">Critical</span>
+        <strong>1</strong>
+      </article>
+      <article class="stat stat-high">
+        <span class="stat-label">High</span>
+        <strong>1</strong>
+      </article>
+      <article class="stat stat-medium">
+        <span class="stat-label">Medium</span>
+        <strong>2</strong>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <div>
+          <h2>Executive summary</h2>
+          <p>Severity has been normalized to reflect practical impact.</p>
+        </div>
+      </div>
+
+      <p class="executive-summary">
+        The most urgent issue is a hardcoded API key. Treat that key as exposed, rotate it, and remove the secret from source control. After that, fix the likely missing <code>fs</code> import because it can cause the file to fail at runtime. The remaining findings are maintainability improvements that will make the code clearer, safer to change, and easier to test.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <div>
+          <h2>Findings by severity</h2>
+          <p>Lower-priority cleanup, such as an unused import, has been filtered out to keep this report focused on meaningful issues.</p>
+        </div>
+      </div>
+
+      <section class="severity-block" aria-labelledby="critical-heading">
+        <div class="severity-heading" id="critical-heading">
+          <span class="badge badge-critical">Critical</span>
+          <span>1 finding</span>
+        </div>
+
+        <article class="finding-card">
+          <div class="finding-header">
+            <div class="finding-title">Hardcoded API key</div>
+            <span class="badge badge-critical">Critical</span>
+          </div>
+
+          <div class="finding-meta">
+            <div class="meta-box">
+              <span class="meta-box-label">Path</span>
+              <span class="meta-box-value"><code>bad_code.js</code></span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Line</span>
+              <span class="meta-box-value">14</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Category</span>
+              <span class="meta-box-value">Security</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Severity</span>
+              <span class="meta-box-value">Critical</span>
+            </div>
+          </div>
+
+          <p class="finding-description">
+            A hardcoded API key is present in the source file. Secrets committed to source control should be treated as exposed, even if the repository is private.
+          </p>
+
+          <div class="recommendation">
+            Recommended action: remove the key from the file, rotate or revoke the exposed key, move the value to an environment variable or secret manager, and ensure <code>.env</code> files are covered by <code>.gitignore</code>.
+          </div>
+        </article>
+      </section>
+
+      <section class="severity-block" aria-labelledby="high-heading">
+        <div class="severity-heading" id="high-heading">
+          <span class="badge badge-high">High</span>
+          <span>1 finding</span>
+        </div>
+
+        <article class="finding-card">
+          <div class="finding-header">
+            <div class="finding-title">Likely missing <code>fs</code> import</div>
+            <span class="badge badge-high">High</span>
+          </div>
+
+          <div class="finding-meta">
+            <div class="meta-box">
+              <span class="meta-box-label">Path</span>
+              <span class="meta-box-value"><code>bad_code.js</code></span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Line</span>
+              <span class="meta-box-value">21</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Category</span>
+              <span class="meta-box-value">Maintainability</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Severity</span>
+              <span class="meta-box-value">High</span>
+            </div>
+          </div>
+
+          <p class="finding-description">
+            <code>fs.writeFileSync</code> is used without a visible <code>fs</code> import in the reviewed file. If no import exists elsewhere, this will fail at runtime.
+          </p>
+
+          <div class="recommendation">
+            Recommended action: add <code>const fs = require("fs");</code> if file writing is required, or move logging into a dedicated module that owns its dependencies.
+          </div>
+        </article>
+      </section>
+
+      <section class="severity-block" aria-labelledby="medium-heading">
+        <div class="severity-heading" id="medium-heading">
+          <span class="badge badge-medium">Medium</span>
+          <span>2 findings</span>
+        </div>
+
+        <article class="finding-card">
+          <div class="finding-header">
+            <div class="finding-title"><code>calculateTotal</code> return type is misleading</div>
+            <span class="badge badge-medium">Medium</span>
+          </div>
+
+          <div class="finding-meta">
+            <div class="meta-box">
+              <span class="meta-box-label">Path</span>
+              <span class="meta-box-value"><code>bad_code.js</code></span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Line</span>
+              <span class="meta-box-value">10</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Category</span>
+              <span class="meta-box-value">Maintainability</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Severity</span>
+              <span class="meta-box-value">Medium</span>
+            </div>
+          </div>
+
+          <p class="finding-description">
+            The function name suggests a numeric calculation result, but it returns a string via <code>x.toString()</code>. That mismatch can confuse callers and makes future changes riskier.
+          </p>
+
+          <div class="recommendation">
+            Recommended action: either return a number from <code>calculateTotal</code> or rename the function to something like <code>formatTotal</code> if string formatting is intentional.
+          </div>
+        </article>
+
+        <article class="finding-card">
+          <div class="finding-header">
+            <div class="finding-title"><code>main</code> has too many responsibilities</div>
+            <span class="badge badge-medium">Medium</span>
+          </div>
+
+          <div class="finding-meta">
+            <div class="meta-box">
+              <span class="meta-box-label">Path</span>
+              <span class="meta-box-value"><code>bad_code.js</code></span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Line</span>
+              <span class="meta-box-value">13</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Category</span>
+              <span class="meta-box-value">Maintainability</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Severity</span>
+              <span class="meta-box-value">Medium</span>
+            </div>
+          </div>
+
+          <p class="finding-description">
+            The <code>main</code> function appears to define data, calculate totals, write logs, and print output. Combining these concerns makes the function harder to test and easier to break during changes.
+          </p>
+
+          <div class="recommendation">
+            Recommended action: split the logic into focused helpers such as data setup, calculation, formatting, logging, and console output.
+          </div>
+        </article>
+      </section>
+
+      <section class="severity-block" aria-labelledby="low-heading">
+        <div class="severity-heading" id="low-heading">
+          <span class="badge badge-low">Low</span>
+          <span>1 finding</span>
+        </div>
+
+        <article class="finding-card">
+          <div class="finding-header">
+            <div class="finding-title">Unclear variable name <code>x</code></div>
+            <span class="badge badge-low">Low</span>
+          </div>
+
+          <div class="finding-meta">
+            <div class="meta-box">
+              <span class="meta-box-label">Path</span>
+              <span class="meta-box-value"><code>bad_code.js</code></span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Line</span>
+              <span class="meta-box-value">4</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Category</span>
+              <span class="meta-box-value">Maintainability</span>
+            </div>
+            <div class="meta-box">
+              <span class="meta-box-label">Severity</span>
+              <span class="meta-box-value">Low</span>
+            </div>
+          </div>
+
+          <p class="finding-description">
+            The variable name <code>x</code> does not communicate what value it stores. Descriptive names reduce cognitive load and make calculations easier to review.
+          </p>
+
+          <div class="recommendation">
+            Recommended action: rename <code>x</code> to a domain-specific name such as <code>total</code>, <code>totalPrice</code>, or another accurate business term.
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <section class="next-steps">
+      <h2>Recommended next steps</h2>
+      <ol>
+        <li>Immediately rotate or revoke the API key found at line 14 if it has ever been committed, shared, or used outside this local file.</li>
+        <li>Move secrets to environment variables, a secret manager, or a secure configuration system. Do not store API keys directly in source files.</li>
+        <li>Verify the <code>fs</code> dependency at line 21. Add the required import or refactor file writing into a dedicated logging module.</li>
+        <li>Make <code>calculateTotal</code> return a number, or rename it if the string result is intentional.</li>
+        <li>Rename unclear variables and split <code>main</code> into smaller functions so each function has one clear responsibility.</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      Generated by Lead Developer review.
+    </footer>
+  </main>
+</body>
+</html>

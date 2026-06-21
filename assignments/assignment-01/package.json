@@ -1,0 +1,18 @@
+{
+  "name": "assignment-01",
+  "version": "1.0.0",
+  "description": "AIP444 Assignment 1 - AI Code Review CLI",
+  "main": "index.js",
+  "scripts": {
+    "review": "node review.js",
+    "test:file": "node review.js --debug --file bad_code.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openai": "^6.44.0"
+  }
+}

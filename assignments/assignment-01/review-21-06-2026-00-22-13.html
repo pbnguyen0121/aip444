@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Code Review Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f8;
+      color: #222;
+      padding: 32px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    pre {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 16px;
+      border-radius: 12px;
+      overflow-x: auto;
+      max-height: 420px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>AI Code Review Report</h1>
+    <p><span class="badge">FILE MODE</span></p>
+    <p><strong>Reviewed input:</strong> bad_code.js</p>
+    <p>This is a temporary checkpoint report. The next checkpoint will replace this with real AI reviewer findings.</p>
+    <h2>Input Preview</h2>
+    <pre>import { join } from &quot;path&quot;;
+
+function calculateTotal(prices) {
+  let x = 0;
+
+  for (const price of prices) {
+    x += price;
+  }
+
+  return x.toString();
+}
+
+function main() {
+  const apiKey = &quot;sk-12345-abcde-secret-key&quot;;
+
+  const user = {
+    id: 1,
+    name: &quot;Alice&quot;,
+  };
+
+  fs.writeFileSync(&quot;log.txt&quot;, &quot;User logged in&quot;);
+
+  console.log(&quot;Current user:&quot;, user);
+  console.log(&quot;Total:&quot;, calculateTotal([10.5, 20, 5.25]));
+}
+
+main();
+
+
+Security Auditor Findings:
+[
+  {
+    &quot;path&quot;: &quot;bad_code.js&quot;,
+    &quot;line&quot;: 10,
+    &quot;severity&quot;: &quot;critical&quot;,
+    &quot;category&quot;: &quot;security&quot;,
+    &quot;description&quot;: &quot;A hardcoded API key was found. Move this secret into a secure environment variable or secret manager and make sure it is not committed to source control.&quot;
+  },
+  {
+    &quot;path&quot;: &quot;bad_code.js&quot;,
+    &quot;line&quot;: 18,
+    &quot;severity&quot;: &quot;warn&quot;,
+    &quot;category&quot;: &quot;security&quot;,
+    &quot;description&quot;: &quot;Sensitive user data is being logged to the console, including the user object. Avoid logging personal or sensitive data.&quot;
+  }
+]
+
+Maintainability Critic Findings:
+[
+  {
+    &quot;path&quot;: &quot;bad_code.js&quot;,
+    &quot;line&quot;: 1,
+    &quot;severity&quot;: &quot;info&quot;,
+    &quot;category&quot;: &quot;maintainability&quot;,
+    &quot;description&quot;: &quot;The import &#039;join&#039; from &#039;path&#039; is unused. Remove it or use it explicitly to avoid confusion.&quot;
+  },
+  {
+    &quot;path&quot;: &quot;bad_code.js&quot;,
+    &quot;line&quot;: 4,
+    &quot;severity&quot;: &quot;warn&quot;,
+    &quot;category&quot;: &quot;maintainability&quot;,
+    &quot;description&quot;: &quot;The variable name &#039;x&#039; is unclear. Rename it to something descriptive like &#039;total&#039; or &#039;totalPrice&#039;.&quot;
+  },
+  {
+    &quot;path&quot;: &quot;bad_code.js&quot;,
+    &quot;line&quot;: 10,
+    &quot;severity&quot;: &quot;warn&quot;,
+    &quot;category&quot;: &quot;maintainability&quot;,
+    &quot;description&quot;: &quot;The function &#039;calculateTotal&#039; returns a string from &#039;x.toString()&#039;, which is inconsistent with a name that suggests a numeric calculation. Return a number or rename the function if formatting is intended.&quot;
+  },
+  {
+    &quot;path&quot;: &quot;bad_code.js&quot;,
+    &quot;line&quot;: 14,
+    &quot;severity&quot;: &quot;info&quot;,
+    &quot;category&quot;: &quot;maintainability&quot;,
+    &quot;description&quot;: &quot;The variable &#039;apiKey&#039; is assigned but never used. Remove it or use it explicitly if needed.&quot;
+  },
+  {
+    &quot;path&quot;: &quot;bad_code.js&quot;,
+    &quot;line&quot;: 21,
+    &quot;severity&quot;: &quot;warn&quot;,
+    &quot;category&quot;: &quot;maintainability&quot;,
+    &quot;description&quot;: &quot;&#039;fs&#039; is used without being imported. Add an explicit import, such as &#039;import fs from \&quot;fs\&quot;&#039; or import &#039;writeFileSync&#039; directly, to make the dependency clear.&quot;
+  },
+  {
+    &quot;path&quot;: &quot;bad_code.js&quot;,
+    &quot;line&quot;: 13,
+    &quot;severity&quot;: &quot;warn&quot;,
+    &quot;category&quot;: &quot;maintainability&quot;,
+    &quot;description&quot;: &quot;The &#039;main&#039; function does several unrelated things: creating user data, writing a log file, logging output, and calculating totals. Consider splitting this into smaller, focused functions.&quot;
+  }
+]</pre>
+  </main>
+</body>
+</html>
