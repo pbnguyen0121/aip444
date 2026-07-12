@@ -1,0 +1,22 @@
+{
+  "name": "lab-07",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "chroma": "chroma run --path ./chroma_db",
+    "index": "tsx indexer.ts",
+    "query": "tsx query.ts",
+    "ask": "tsx ask-node.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "chromadb": "^3.5.0",
+    "dotenv": "^17.4.2",
+    "openai": "^6.46.0"
+  }
+}
