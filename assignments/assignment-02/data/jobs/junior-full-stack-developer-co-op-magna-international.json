@@ -1,0 +1,67 @@
+{
+  "jobTitle": "Junior Full Stack Developer – Co-op",
+  "companyName": "Magna International",
+  "location": "333 Market Drive, Milton, ON L9T 4Z7",
+  "remoteStatus": "null",
+  "postingAgeDays": null,
+  "requiredSkills": [
+    "Knowledge of several modern programming languages",
+    "Schema design concepts",
+    "Knowledge of at least one modern Database Management System (DBMS)",
+    "Understanding of operating systems and networking",
+    "Understanding of coding methods and software development best practices",
+    "Version control and source code management practices"
+  ],
+  "preferredSkills": [],
+  "experienceLevel": "Junior",
+  "educationRequirements": [
+    "Pursuit of a Bachelor's degree or Community College diploma in Computer Studies, Computer Science, Science, Engineering, Mathematics, or equivalent.",
+    "Applicants must be enrolled in a recognized post-secondary co-op program."
+  ],
+  "salaryMin": null,
+  "salaryMax": null,
+  "salaryCurrency": null,
+  "keyResponsibilities": [
+    "Assist in feasibility studies for establishing new or revised systems and procedures.",
+    "Carry out systems analysis and design at a junior level.",
+    "Formulate logical solutions to operational, administrative, and financial problems using structured systems design techniques.",
+    "Ensure system designs meet the operational needs and requirements of users.",
+    "Work directly with users to determine system requirements.",
+    "Participate in meetings with senior management and other stakeholders.",
+    "Use iterative development techniques when implementing systems.",
+    "Design and develop front-end and back-end components and services for new and existing applications.",
+    "Integrate internal systems with external applications and services.",
+    "Assist other staff with systems and procedures to ensure conformance to organizational standards.",
+    "Design, code, test, debug, and document new and existing applications according to departmental development standards.",
+    "Use version control and source code management practices.",
+    "Stay current with software and hardware technologies and emerging industry trends.",
+    "Assist project leaders and other developers with detailed system design and coding.",
+    "Attend code reviews with Senior and Junior Developers.",
+    "Attend regular project status meetings to determine business priorities.",
+    "Maintain workplace safety standards and follow company safety policies.",
+    "Follow Magna's Code of Conduct, Ethics, and compliance policies.",
+    "Perform duties in an environmentally responsible manner.",
+    "Work occasional overtime when required.",
+    "Perform other duties as required."
+  ],
+  "companyResearch": {
+    "companySize": "158,000",
+    "industry": "Automotive Parts Manufacturing",
+    "recentNews": [
+      "Announced a $200 million expansion to its Greenville County facility, expected to create 200 new jobs (Dec 2024).",
+      "Scheduled to permanently close its Qualtech Seating Systems plant in London, Ontario by October 2025."
+    ],
+    "cultureSignals": [
+      "Employee rating of 3.6 out of 5 stars on Glassdoor.",
+      "63% of employees on Glassdoor would recommend working there to a friend.",
+      "Employees appreciate an entrepreneurial mindset and a friendly, collaborative team atmosphere."
+    ],
+    "additionalContext": [
+      "Headquartered in Aurora, Ontario, Canada.",
+      "Recognized on the 2020 Forbes Global 2000.",
+      "Governed under a corporate constitution that calls for the distribution of profits to employees and shareholders.",
+      "Operates 342 manufacturing operations and 91 product development, engineering, and sales centres in 27 countries.",
+      "Mainly supplies automakers such as General Motors and Ford."
+    ]
+  }
+}

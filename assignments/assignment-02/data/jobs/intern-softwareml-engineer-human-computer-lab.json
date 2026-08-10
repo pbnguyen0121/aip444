@@ -1,0 +1,69 @@
+{
+  "jobTitle": "Intern – Software/ML Engineer",
+  "companyName": "Human Computer Lab",
+  "location": "Toronto, Ontario",
+  "remoteStatus": "Hybrid",
+  "postingAgeDays": null,
+  "requiredSkills": [
+    "Python",
+    "C++",
+    "Algorithms",
+    "Software engineering fundamentals",
+    "Machine learning frameworks",
+    "Machine learning system development"
+  ],
+  "preferredSkills": [
+    "Computer Vision",
+    "Robotics",
+    "Reinforcement Learning",
+    "Multimodal AI",
+    "Machine Learning",
+    "Robot Perception",
+    "Audio Processing",
+    "Interaction Understanding",
+    "Embedded Systems",
+    "Real-time Systems",
+    "Isaac Sim",
+    "MJLab",
+    "MuJoCo"
+  ],
+  "experienceLevel": "Internship / Co-op",
+  "educationRequirements": [
+    "Are pursuing a degree in Computer Science, Electrical Engineering, Computer Engineering, or a related field"
+  ],
+  "salaryMin": null,
+  "salaryMax": null,
+  "salaryCurrency": null,
+  "keyResponsibilities": [
+    "Develop software systems for robotic platforms.",
+    "Build systems that support robot perception, intelligence, and behavior.",
+    "Develop machine learning models for computer vision.",
+    "Develop machine learning models for audio processing.",
+    "Build systems for interaction understanding.",
+    "Design and implement machine learning training pipelines.",
+    "Design and implement pipelines for deploying machine learning models.",
+    "Integrate machine learning systems with robotic hardware.",
+    "Integrate software with embedded systems.",
+    "Improve robot perception capabilities.",
+    "Improve robot responsiveness.",
+    "Improve behavioral intelligence.",
+    "Develop real-time software systems.",
+    "Transform research and simulation work into reliable, production-ready robotics software.",
+    "Collaborate with robotics engineers to develop integrated robotic systems."
+  ],
+  "companyResearch": {
+    "companySize": "2-10 employees",
+    "industry": "Research Services",
+    "recentNews": [
+      "HCL raised $1.4 million USD in SAFE funding from investors including South Park Commons and FR8.",
+      "Currently offering a build-it-yourself beta version of their product for hobbyists and developers.",
+      "Focusing on researching and building expressive robots, specifically mentioning the LeLamp project."
+    ],
+    "cultureSignals": [],
+    "additionalContext": [
+      "The company is in early hiring stages and currently utilizes contractors.",
+      "Plans to build a cross-border team in Canada and the United States.",
+      "Founder: Sarkary (a South Park Commons fellow)."
+    ]
+  }
+}

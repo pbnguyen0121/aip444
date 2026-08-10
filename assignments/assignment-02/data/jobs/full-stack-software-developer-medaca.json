@@ -1,0 +1,79 @@
+{
+  "jobTitle": "Full Stack Software Developer",
+  "companyName": "Medaca",
+  "location": "Greater Toronto Area, Ontario",
+  "remoteStatus": "Primarily Remote",
+  "postingAgeDays": null,
+  "requiredSkills": [
+    "Bilingual English and French",
+    "PHP",
+    "MySQL",
+    "JavaScript",
+    "Bootstrap",
+    "Git",
+    "MVC",
+    "Service-Oriented Architecture",
+    "Web development",
+    "Full-stack development",
+    "Data structures",
+    "Computer logic",
+    "Computer program design",
+    "Software design methods and techniques",
+    "Writing computer programs",
+    "Editing existing programs",
+    "Debugging computer programs",
+    "Software troubleshooting",
+    "Agile development"
+  ],
+  "preferredSkills": [
+    "Docker",
+    "CI/CD",
+    "AWS Infrastructure as Code (IaC)",
+    "GitHub"
+  ],
+  "experienceLevel": "5+ years of web development experience",
+  "educationRequirements": [
+    "A Bachelor's degree"
+  ],
+  "salaryMin": 80000,
+  "salaryMax": 90000,
+  "salaryCurrency": "$",
+  "keyResponsibilities": [
+    "Designing, developing, supporting, and implementing software solutions that improve operational efficiency, system functionality, and user experience",
+    "Communicate information clearly and accurately",
+    "Listen effectively to team members and stakeholders",
+    "Ask questions when clarification is required",
+    "Follow instructions accurately",
+    "Respond appropriately to management direction",
+    "Communicate effectively with internal teams and end users",
+    "Maintain professional communication with clients and vendors",
+    "Read and analyze common and complex source code",
+    "Interpret programming manuals",
+    "Interpret licensing documents",
+    "Interpret legal contracts and documents",
+    "Write clearly and informatively for different audiences",
+    "Review and edit their own written work",
+    "Respond professionally to inquiries and complaints",
+    "Communicate with staff and regulatory agencies",
+    "Communicate with upper management",
+    "Communicate with members of the business community",
+    "Present information effectively in one-on-one settings",
+    "Present information to small and large groups",
+    "Present information to senior management",
+    "Present information to clients and vendors"
+  ],
+  "companyResearch": {
+    "companySize": null,
+    "industry": null,
+    "recentNews": [],
+    "cultureSignals": [
+      "Employee rating of 3.0 out of 5 stars on Glassdoor (based on 286 reviews).",
+      "46% of employees would recommend the company to a friend.",
+      "Mixed reviews regarding workplace culture, with some reports of a 'hostile and toxic work environment' and others noting a 'friendly atmosphere and supportive middle management.'",
+      "Concerns expressed by employees regarding recent leadership changes."
+    ],
+    "additionalContext": [
+      "There are multiple entities with similar names: MeDaCa (a medical information management platform founded in 2014 in Japan), Medica (a medical technology trade fair in Germany), Medica SpA (an electromedical equipment manufacturer), and Medica (a US-based insurer)."
+    ]
+  }
+}

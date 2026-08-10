@@ -1,0 +1,78 @@
+{
+  "jobTitle": "Software Engineer – Intern/Co-op",
+  "companyName": "Viggle AI",
+  "location": "Toronto, Ontario",
+  "remoteStatus": null,
+  "postingAgeDays": 0,
+  "requiredSkills": [
+    "Strong software engineering fundamentals",
+    "Ability to learn new technologies quickly",
+    "Engineering judgment",
+    "Problem-solving ability",
+    "Interest in building real products",
+    "Ability to adapt to different engineering areas",
+    "Interest in Generative AI and emerging technologies",
+    "Ability to work on production-level projects",
+    "Willingness to learn and take ownership of real work"
+  ],
+  "preferredSkills": [
+    "React",
+    "React Native",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Go",
+    "Python",
+    "Rust",
+    "API design",
+    "Distributed systems",
+    "Three.js",
+    "WebGL",
+    "Unity",
+    "Unreal Engine",
+    "Multiplayer networking",
+    "3D graphics",
+    "PyTorch",
+    "CUDA",
+    "Ray",
+    "Computer Vision",
+    "Pose estimation",
+    "Machine Learning infrastructure",
+    "MLOps",
+    "Model optimization",
+    "Inference systems",
+    "GPU orchestration",
+    "Distributed training",
+    "Data pipelines",
+    "Inference serving"
+  ],
+  "experienceLevel": "Intern/Co-op",
+  "educationRequirements": [],
+  "salaryMin": 5000,
+  "salaryMax": 8000,
+  "salaryCurrency": "$",
+  "keyResponsibilities": [
+    "Contribute to the Viggle App, PINOC, Viggle Games, Viggle API, or the company's infrastructure and machine learning systems",
+    "Work on real product features that can be released to users",
+    "Work across different areas of the system, including generation pipelines, real-time rendering, backend infrastructure, APIs, and user-facing product features"
+  ],
+  "companyResearch": {
+    "companySize": null,
+    "industry": "Generative Artificial Intelligence (AI) / Video Generation",
+    "recentNews": [
+      "Secured $26 million CAD ($19 million USD) in Series A funding in August 2024, led by a16z.",
+      "Utilizing funding to scale, accelerate product development, and expand the team."
+    ],
+    "cultureSignals": [
+      "Vibrant office atmosphere with friendly, passionate coworkers.",
+      "Pet-friendly environment.",
+      "Described by some as having a chaotic startup culture.",
+      "Work-life balance rated 3.3 out of 5 on Glassdoor."
+    ],
+    "additionalContext": [
+      "The company uses proprietary JST-1 technology, described as a first-in-the-world 3D-video foundation model with physics understanding.",
+      "The platform has a vibrant Discord community attracting 4 million users.",
+      "Target users include content creators (meme makers) and professionals in movie and game studios."
+    ]
+  }
+}

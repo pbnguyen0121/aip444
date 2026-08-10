@@ -1,0 +1,78 @@
+{
+  "jobTitle": "Dev/Ops Engineer – Internship/Co-op",
+  "companyName": "Cloud 3D Print",
+  "location": "Markham, Ontario L3R 9Z7",
+  "remoteStatus": null,
+  "postingAgeDays": null,
+  "requiredSkills": [
+    "CI/CD pipelines",
+    "GitHub Actions",
+    "Jenkins",
+    "Docker",
+    "Ubuntu",
+    "server distribution",
+    "cost analysis",
+    "deployment automation",
+    "Quality Assurance",
+    "test automation",
+    "version control",
+    "Kubernetes",
+    "AWS",
+    "cloud architecture",
+    "microservices",
+    "object-oriented programming",
+    "Java",
+    "Python"
+  ],
+  "preferredSkills": [
+    "Bachelor's degree in Computer Science, Mathematics, or a related field",
+    "Terraform",
+    "building repeatable infrastructure across multiple environments",
+    "container platforms",
+    "Java Spring web application development",
+    "Test Driven Development (TDD)",
+    "test case management tools",
+    "system logging and monitoring tools"
+  ],
+  "experienceLevel": "3+ years of DevOps experience",
+  "educationRequirements": [],
+  "salaryMin": null,
+  "salaryMax": null,
+  "salaryCurrency": null,
+  "keyResponsibilities": [
+    "Collaborate with team members in an Agile software development environment.",
+    "Implement and maintain Jenkins CI/CD pipelines.",
+    "Integrate source control into automated development pipelines.",
+    "Integrate security and compliance processes into CI/CD pipelines.",
+    "Implement Continuous Integration processes.",
+    "Integrate Quality Assurance processes into development pipelines.",
+    "Automate software deployment and feedback stages.",
+    "Design and implement AWS architectures and environments.",
+    "Develop Infrastructure as Code automation scripts.",
+    "Design strategies for site monitoring.",
+    "Develop plans for high availability.",
+    "Implement security and compliance strategies.",
+    "Work with development teams to optimize containerized backend services.",
+    "Scale containerized backend services.",
+    "Analyze and optimize existing technologies and systems.",
+    "Develop plans and processes for system improvements and expansion.",
+    "Consider infrastructure and operational costs when designing solutions.",
+    "Apply security best practices to microservices applications deployed on AWS.",
+    "Support customer technical issues through assessment, interpretation, resolution, and recommendations.",
+    "Create technical specifications and documentation.",
+    "Document development environments and deployment procedures.",
+    "Participate in after-hours on-call support when required.",
+    "Work with development engineers to improve the team's on-call processes."
+  ],
+  "companyResearch": {
+    "companySize": null,
+    "industry": null,
+    "recentNews": [],
+    "cultureSignals": [
+      "Employees at 3D Cloud have praised a supportive and collaborative atmosphere with strong team dynamics and a sense of community."
+    ],
+    "additionalContext": [
+      "The company's presence or specific details were not explicitly detailed in the search results provided, but similar companies in the sector focus on 3D print service bureaus."
+    ]
+  }
+}

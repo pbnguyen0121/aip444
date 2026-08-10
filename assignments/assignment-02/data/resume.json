@@ -1,0 +1,110 @@
+{
+  "name": "Phuong Bac Nguyen",
+  "education": [
+    {
+      "institution": "Seneca Polytechnic - Newnham Campus, Toronto, Canada",
+      "credential": "Advanced Diploma of Computer Programming and Analysis (CPAC)",
+      "fieldOfStudy": "Computer Programming and Analysis (CPAC)",
+      "startDate": null,
+      "endDate": "September 2026"
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "Supermarket",
+      "title": "Stock Clerk",
+      "startDate": "January 2023",
+      "endDate": "Present",
+      "responsibilities": [
+        "Organized and replenished inventory, ensuring shelves were well-stocked, neatly displayed, and aligned with health and safety standards",
+        "Collaborated with team members to prioritize tasks during peak periods, boosting efficiency and customer satisfaction"
+      ],
+      "technologies": []
+    }
+  ],
+  "skills": [
+    "C#",
+    "ASP.NET (introductory)",
+    "MVC",
+    "Node.js",
+    "Python",
+    "C++",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Bootstrap",
+    "SQL",
+    "PostgreSQL",
+    "Data Modeling",
+    "Scripting",
+    "GitHub",
+    "Jira",
+    "Agile (Scrum)",
+    "Test-Driven Development (TDD)",
+    "PowerApps (basic)",
+    "Power Automate",
+    "Windows 10",
+    "Microsoft Office 365",
+    "Active Directory",
+    "Troubleshooting (hardware/software)",
+    "Networking (basic)",
+    "AWS",
+    "Java",
+    "Pandas",
+    "NumPy",
+    "Tableau",
+    "Power BI"
+  ],
+  "projects": [
+    {
+      "name": "Museum Explorer Full Stack",
+      "description": "Implemented protected API routes, JWT auth, and user sessions for storing personalized favourites and search history. Integrated global state using Jotai, optimized client performance via SWR, and validated API data for integrity. Deployed frontend and backend on Vercel with live persistent MongoDB storage using Atlas. Built a responsive, mobile-friendly UI using React-Bootstrap and ensured full accessibility and usability.",
+      "technologies": [
+        "Next.js",
+        "React",
+        "MongoDB",
+        "Node.js",
+        "JWT",
+        "SWR",
+        "Jotai",
+        "Vercel",
+        "React-Bootstrap"
+      ]
+    },
+    {
+      "name": "QuickShopper",
+      "description": "Built a dynamic full-stack application with PostgreSQL and REST APIs, simulating.NET MVC workflows for managing users and transactions. Developed responsive UI with JavaScript, Bootstrap, and dynamic routing, documented system requirements and tested features. Enabled user registration with transactional email support, migrating from Mailgun (sandbox) to Resend for unrestricted delivery. Conducted testing and debugging to ensure seamless data flows between front-end and back-end.",
+      "technologies": [
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Handlebars",
+        "Cloudinary",
+        "Sequelize",
+        "JavaScript",
+        "Bootstrap"
+      ]
+    },
+    {
+      "name": "Package Delivery System",
+      "description": "Designed and implemented automated test plans and validation scripts, reducing bug-fix turnaround by 70% and increasing sprint efficiency. Coordinated collaboration among 4 team members on GitHub, managing 2 code repositories and tracking 50+ versions to ensure the effective integration of features. Contributed to Agile sprint planning, coding, and testing in a C/C++ logistics system. Leveraged Jira’s Kanban Boards to visualize workflow and manage tasks clearly, improved project transparency, coordination, and documentation productively.",
+      "technologies": [
+        "C",
+        "C++",
+        "GitHub",
+        "Jira"
+      ]
+    },
+    {
+      "name": "OlympicStatSync – Olympic Data ETL Pipeline",
+      "description": "Built a Python ETL pipeline to preprocess and validate large datasets, applying TDD to ensure data integrity. Audited and debugged large CSV files, resolving anomalies (nulls, conflicting IDs, inconsistent formats). Applied test-driven development (TDD) to ensure consistency with stakeholder expectations and system design. Collaborated in a 2-person Agile team on GitHub, managing tasks via peer reviews and sprint iterations.",
+      "technologies": [
+        "Python",
+        "CSV",
+        "Git",
+        "Data Structures"
+      ]
+    }
+  ],
+  "certifications": []
+}

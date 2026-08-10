@@ -1,0 +1,129 @@
+{
+  "totalPostings": 9,
+  "commonRequiredSkills": [
+    {
+      "skill": "Python",
+      "count": 4,
+      "percentage": 44.44
+    },
+    {
+      "skill": "SQL",
+      "count": 3,
+      "percentage": 33.33
+    },
+    {
+      "skill": "JavaScript",
+      "count": 2,
+      "percentage": 22.22
+    },
+    {
+      "skill": "Java",
+      "count": 2,
+      "percentage": 22.22
+    },
+    {
+      "skill": "Git",
+      "count": 2,
+      "percentage": 22.22
+    },
+    {
+      "skill": "C++",
+      "count": 2,
+      "percentage": 22.22
+    }
+  ],
+  "commonPreferredSkills": [
+    {
+      "skill": "Docker",
+      "count": 3,
+      "percentage": 33.33
+    },
+    {
+      "skill": "AWS",
+      "count": 3,
+      "percentage": 33.33
+    },
+    {
+      "skill": "Machine Learning",
+      "count": 2,
+      "percentage": 22.22
+    },
+    {
+      "skill": "Computer Vision",
+      "count": 2,
+      "percentage": 22.22
+    },
+    {
+      "skill": "Kubernetes",
+      "count": 2,
+      "percentage": 22.22
+    },
+    {
+      "skill": "React",
+      "count": 2,
+      "percentage": 22.22
+    },
+    {
+      "skill": "TypeScript",
+      "count": 2,
+      "percentage": 22.22
+    }
+  ],
+  "salaryAnalysis": {
+    "postingsWithSalary": 4,
+    "postingsWithoutSalary": 5,
+    "observedRanges": [
+      "110000 - 130000 USD",
+      "80000 - 90000 $",
+      "70000 - 115000 CAD",
+      "25 - 70 $"
+    ],
+    "summary": "Salary data is highly variable due to currency differences (USD, CAD, and unspecified $) and role types, ranging from hourly/stipend-based intern pay to six-figure annual professional salaries."
+  },
+  "experiencePatterns": [
+    "Internship / Co-op",
+    "Junior",
+    "Intermediate Developer",
+    "Intermediate to Senior",
+    "3+ years of DevOps experience",
+    "4 years of Python experience",
+    "5+ years of web development experience"
+  ],
+  "educationPatterns": [
+    "Bachelor's Degree",
+    "University or College education",
+    "Pursuing a degree in Computer Science, Electrical Engineering, Computer Engineering, or a related field",
+    "Enrolled in a recognized post-secondary co-op program"
+  ],
+  "remoteWork": {
+    "remote": 1,
+    "hybrid": 3,
+    "inPerson": 2,
+    "notSpecified": 3,
+    "summary": "The market offers a variety of work models, ranging from fully in-person or office-based roles to hybrid and primarily remote options."
+  },
+  "companySizeDistribution": [
+    {
+      "category": "Large (1000+ employees)",
+      "count": 2
+    },
+    {
+      "category": "Medium (51-500 employees)",
+      "count": 1
+    },
+    {
+      "category": "Small (2-50 employees)",
+      "count": 2
+    },
+    {
+      "category": "Unknown",
+      "count": 4
+    }
+  ],
+  "marketInsights": [
+    "Internship and Co-op roles are prominent, particularly in specialized fields like Robotics and AI.",
+    "There is a strong demand for cloud technologies (AWS) and containerization (Docker, Kubernetes) across various seniority levels.",
+    "Machine Learning and Generative AI skills are emerging as key requirements for specialized engineering roles.",
+    "The market shows a mix of large enterprise roles (Amazon, Magna) and highly specialized small AI/Robotics startups."
+  ]
+}

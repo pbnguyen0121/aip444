@@ -1,0 +1,88 @@
+{
+  "jobTitle": "Robotics – Software Development Engineer Intern/Co-op – 2026",
+  "companyName": "Amazon Development Centre Canada ULC",
+  "location": "Toronto, Ontario",
+  "remoteStatus": "In office (Monday through Friday)",
+  "postingAgeDays": null,
+  "requiredSkills": [
+    "Java",
+    "Python",
+    "C++",
+    "C#",
+    "Go",
+    "Rust",
+    "TypeScript",
+    "Data structure implementation",
+    "Basic algorithm development",
+    "Object-oriented design principles"
+  ],
+  "preferredSkills": [
+    "Previous technical internships",
+    "Software development projects",
+    "Cloud computing platforms (AWS)",
+    "SQL databases",
+    "NoSQL databases",
+    "AI tools for software development productivity",
+    "Open-source project contributions",
+    "Version control systems",
+    "Software Development Life Cycle (SDLC)",
+    "Robotics",
+    "Computer Vision",
+    "Machine Learning",
+    "Optimization",
+    "Manipulation",
+    "Perception",
+    "Motion Planning and Controls",
+    "Movement",
+    "Autonomous Navigation",
+    "Path Planning"
+  ],
+  "experienceLevel": "Internship/Co-op",
+  "educationRequirements": [
+    "Be pursuing a Bachelor's degree or above in Computer Science, Computer Engineering, Data Science, Information Systems, or another related STEM field",
+    "Have at least one academic quarter, semester, or trimester remaining after the internship ends"
+  ],
+  "salaryMin": null,
+  "salaryMax": null,
+  "salaryCurrency": null,
+  "keyResponsibilities": [
+    "Collaborate with experienced engineers and cross-disciplinary team members to design, build, and operate innovative products and services",
+    "Participate in technical discussions and contribute to engineering solutions",
+    "Design and develop scalable software solutions using cloud-native architectures and microservices",
+    "Work within large distributed computing environments",
+    "Participate in code reviews",
+    "Contribute to technical documentation",
+    "Build and maintain resilient distributed systems",
+    "Design systems that are scalable, fault-tolerant, and cost-effective",
+    "Use and contribute to Generative AI and AI-powered development tools",
+    "Stay current with emerging software technologies",
+    "Write clean and maintainable code using software development best practices and design patterns",
+    "Work in an Agile development environment",
+    "Apply Continuous Integration and Continuous Deployment (CI/CD) principles",
+    "Participate in operational responsibilities, including on-call duties",
+    "Monitor, troubleshoot, and resolve production issues",
+    "Design, develop, and test software components that interact with fulfillment center technologies",
+    "Work with technologies related to robotics, material handling equipment, computer vision, and cloud services"
+  ],
+  "companyResearch": {
+    "companySize": null,
+    "industry": null,
+    "recentNews": [
+      "Amazon Robotics has implemented at least 100 job cuts in its robotics division as part of broader corporate restructuring.",
+      "Amazon announced significant corporate layoffs, including approximately 14,000 roles in October 2025 and around 16,000 roles in January 2026.",
+      "Amazon CEO Andy Jassy stated that recent large-scale layoffs were driven by 'culture' rather than AI.",
+      "Amazon Robotics reached a milestone of deploying its millionth robot in July 2025."
+    ],
+    "cultureSignals": [
+      "Emphasis on diversity, equity, and inclusion through active recruitment initiatives.",
+      "Focus on employee health and safety with continuous inspections and feedback integration.",
+      "Some employees report a 'best work culture' and a sense of 'family,' while others describe a 'hectic profile.'",
+      "Diverse work culture reported by some employees."
+    ],
+    "additionalContext": [
+      "The SDE internship in Vancouver typically runs for 12 to 16 weeks and involves responsibilities similar to a full-time SDE role.",
+      "The interview process for SDE interns often includes an online assessment (coding and workstyles) followed by a virtual technical interview via Amazon Chime.",
+      "Technical interviews for SDE roles may include coding questions (e.g., graph-related problems or dynamic programming) and behavioral questions."
+    ]
+  }
+}

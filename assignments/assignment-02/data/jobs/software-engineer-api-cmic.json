@@ -1,0 +1,66 @@
+{
+  "jobTitle": "Software Engineer – API",
+  "companyName": "CMiC",
+  "location": "Toronto, Ontario M3J 3K1",
+  "remoteStatus": "Hybrid",
+  "postingAgeDays": null,
+  "requiredSkills": [
+    "Object-Oriented Programming",
+    "REST",
+    "RESTful APIs",
+    "HTTP",
+    "Oracle ADF BC REST",
+    "Jersey",
+    "SQL",
+    "PL/SQL",
+    "Relational Database Management System concepts"
+  ],
+  "preferredSkills": [
+    "Java"
+  ],
+  "experienceLevel": "Intermediate to Senior",
+  "educationRequirements": [],
+  "salaryMin": 70000,
+  "salaryMax": 115000,
+  "salaryCurrency": "CAD",
+  "keyResponsibilities": [
+    "Design, build, and maintain efficient software.",
+    "Develop reusable and reliable code.",
+    "Develop secure software solutions.",
+    "Develop RESTful APIs to support front-end applications.",
+    "Modify and maintain existing APIs.",
+    "Design and create new APIs.",
+    "Develop APIs using Oracle ADF BC REST.",
+    "Develop APIs using Jersey frameworks.",
+    "Perform database-level development to support APIs.",
+    "Improve tools related to API development.",
+    "Improve API development processes.",
+    "Create technical documentation for APIs.",
+    "Document development tools and processes.",
+    "Review code written by other developers.",
+    "Analyze technical problems.",
+    "Identify and implement appropriate technical solutions.",
+    "Apply software engineering best practices.",
+    "Collaborate and communicate effectively with other team members."
+  ],
+  "companyResearch": {
+    "companySize": "4,415",
+    "industry": "Construction Software / ERP",
+    "recentNews": [
+      "Recognized as an AI Technology Leader in Construction 2026 by Silicon Review.",
+      "Active job postings saw a significant decline (67.9%) in 2026, though new monthly postings rose slightly to 113."
+    ],
+    "cultureSignals": [
+      "Employee sentiment is described as negative but improving.",
+      "Reports of a friendly atmosphere with supportive coworkers and a laid-back environment.",
+      "Some reviews highlight a toxic leadership style and unrealistic expectations from upper management.",
+      "Reports of a disconnect within the company and claims of preferential treatment for Japanese staff."
+    ],
+    "additionalContext": [
+      "Headcount reached a low of 4,415 in 2025 Q4 before recovering.",
+      "Workforce is concentrated in Japan (78.5%), followed by the United States (7.2%) and South Korea (7.0%).",
+      "The company provides an AI-powered, integrated construction ERP platform.",
+      "CMiC has a 25% market share among North America's top 400 contractors."
+    ]
+  }
+}

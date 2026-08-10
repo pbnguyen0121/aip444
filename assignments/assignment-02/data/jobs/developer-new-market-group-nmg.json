@@ -1,0 +1,63 @@
+{
+  "jobTitle": "Developer",
+  "companyName": "New Market Group (NMG)",
+  "location": "200 Davis Drive, Newmarket, ON L3Y 2N4",
+  "remoteStatus": "In Person",
+  "postingAgeDays": null,
+  "requiredSkills": [
+    ".NET",
+    "SQL",
+    "SQL Server",
+    "Software Analysis",
+    "Software Design",
+    "Client-Server Development",
+    "Desktop Application Development"
+  ],
+  "preferredSkills": [
+    "Bachelor's Degree",
+    "English"
+  ],
+  "experienceLevel": "Intermediate Developer",
+  "educationRequirements": [
+    "University or College education",
+    "Bachelor's Degree"
+  ],
+  "salaryMin": 110000,
+  "salaryMax": 130000,
+  "salaryCurrency": "USD",
+  "keyResponsibilities": [
+    "Design and develop software solutions using.NET.",
+    "Develop and maintain solutions using SQL Server.",
+    "Work with client-server applications.",
+    "Work with desktop application environments.",
+    "Analyze business and technical requirements.",
+    "Design software solutions.",
+    "Develop customer-centric software solutions.",
+    "Apply modern software development technologies and methodologies.",
+    "Solve technical and business problems through software.",
+    "Collaborate with other members of the development team.",
+    "Communicate effectively with technical and non-technical stakeholders.",
+    "Manage development tasks and priorities.",
+    "Apply time management skills to software projects.",
+    "Apply project management skills when working on development initiatives.",
+    "Contribute to high-impact enterprise software solutions.",
+    "Continue developing technical skills with the opportunity to progress into a Senior Developer role."
+  ],
+  "companyResearch": {
+    "companySize": "51-200 employees",
+    "industry": "Advertising Services",
+    "recentNews": [],
+    "cultureSignals": [
+      "Employee reviews describe the workplace culture as 'extremely out of date'",
+      "One review mentions an emphasis on 'wearing suits and stroking egos' rather than career development",
+      "Negative feedback regarding management/leadership in some employee reviews"
+    ],
+    "additionalContext": [
+      "Founded in 1978",
+      "Based in Newmarket, Ontario",
+      "NMG is a portfolio of marketing groups spanning Foodservice, Industrial Supply, Lighting, Home Décor, and Construction Equipment industries",
+      "The portfolio includes market data and analysis for the foodservice industry",
+      "Connects over 1,050 distributor, dealer, and retail members with 750+ supplier partners"
+    ]
+  }
+}

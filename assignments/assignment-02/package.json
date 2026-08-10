@@ -1,0 +1,44 @@
+{
+  "name": "assignment-02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "market": "tsx src/market.ts",
+    "gaps": "tsx src/gaps.ts",
+    "advise": "tsx src/advise.ts",
+    "test:pdf": "tsx src/test-pdf.ts",
+    "test:schema": "tsx src/test-schema.ts",
+    "test:extract": "tsx src/test-extract-job.ts",
+    "test:process": "tsx src/test-process-job.ts",
+    "test:web": "tsx src/test-web-search.ts",
+    "test:research": "tsx src/test-company-research.ts",
+    "test:advisor": "tsx src/test-advisor-utils.ts",
+    "market": "tsx src/market.ts",
+    "analyze:market": "tsx src/generate-market-analysis.ts",
+    "resume": "tsx src/resume.ts",
+    "gaps": "tsx src/gaps.ts",
+    "report:market": "tsx src/generate-market-report.ts",
+    "report:gaps": "tsx src/generate-gap-report.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openai": "^7.4.0",
+    "pdf-parse": "^2.4.5",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  }
+}
